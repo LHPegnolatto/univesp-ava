@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { Container, Header, Title, Subtitle, Form, InputContainer, InputLabel, Input, ButtonInputContainer, Eye, EyeSlash, ActionsContainer, Recovery, SubmitButton } from './styles';
+import { Header, Title, Subtitle, Form, InputContainer, InputLabel, Input, ButtonInputContainer, Eye, EyeSlash, ActionsContainer, Recovery, SubmitButton } from './styles';
 
 import { useAuthContext } from '../../context/Auth';
 import { useLogonContext, setPage } from '../../context/Logon';
@@ -15,7 +15,10 @@ const LogonForm: React.FC = () => {
   const passwordInput = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(() => {
-    focusEmail();
+    if(!email)
+      focusEmail();
+    else
+      focusPassword();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ ]);
 
@@ -42,7 +45,7 @@ const LogonForm: React.FC = () => {
   }
 
   return (
-    <Container>
+    <>
       <Header>
         <Title>Sistema Operacional Univesp</Title>
         <Subtitle>Login</Subtitle>
@@ -84,7 +87,7 @@ const LogonForm: React.FC = () => {
 
         <SubmitButton onClick={handleLogin}>Entrar</SubmitButton>
       </ActionsContainer>
-    </Container>
+    </>
   );
 }
 

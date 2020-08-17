@@ -1,31 +1,6 @@
 import styled, { css } from 'styled-components';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  flex-direction: column;
-
-  width: 420px;
-  height: 312px;
-
-  border-radius: 3px;
-
-  padding: 30px;
-
-  z-index: 2;
-
-  background-color: #fff;
-
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-  @media(max-width: 500px) {
-    width: 100%;
-  }
-`;
-
 export const Header = styled.div`
   display: flex;  
   align-items: center;
@@ -143,8 +118,10 @@ export const ActionsContainer = styled.div`
 export const Recovery = styled.div`
   color: #d13239;
 
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 500;
+
+  margin-right: 20px;
 
   cursor: pointer;
   user-select: none;

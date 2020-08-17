@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import { Container, Header, Title, Subtitle, Form, InputContainer, InputLabel, Input, Description, ActionsContainer, GoBack, SubmitButton } from './styles';
+import { Header, Title, Subtitle, Form, InputContainer, InputLabel, Input, Description, ActionsContainer, GoBack, SubmitButton } from './styles';
 
 import { useLogonContext, setPage } from '../../context/Logon';
 
@@ -19,7 +19,7 @@ const PasswordRecovery: React.FC = () => {
   }
 
   return (
-    <Container>
+    <>
       <Header>
         <Title>Sistema Operacional Univesp</Title>
         <Subtitle>Recuperar a senha / primeiro acesso</Subtitle>
@@ -51,13 +51,17 @@ const PasswordRecovery: React.FC = () => {
 
           <SubmitButton 
             onClick={() => {
-              setPage(setLoadPage, setPageAction, 3);
+              setPage(setLoadPage, setPageAction, 4);
+
+              setTimeout(() => {
+                setPage(setLoadPage, setPageAction, 3);
+              }, 2000);
             }}
           >
             Recuperar senha
           </SubmitButton>
         </ActionsContainer>
-    </Container>
+    </>
   );
 }
 

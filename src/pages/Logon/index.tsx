@@ -2,7 +2,9 @@ import React from 'react';
 
 import { Container, Logo, BackgroundParticles } from './styles';
 
-import LogonProvider, { LogonAction } from '../../context/Logon';
+import LogonProvider from '../../context/Logon';
+
+import LogonAction from '../../components/LogonAction';
 
 import logo from '../../assets/univesp_logo.svg';
 
@@ -18,9 +20,9 @@ const Logon: React.FC = () => {
           params={{ 
             fps_limit: 60,
             particles: {
-              color: { value: "#d13239" },
+              color: { value: "#ffffff" },
               line_linked: {
-                color: "#d13239",
+                color: "#ffffff",
                 distance: 150,
                 enable: true,
                 opacity: 0.8,
@@ -36,7 +38,7 @@ const Logon: React.FC = () => {
                 speed: 2,
                 straight: false
               },
-              number: { density: { enable: true, value_area: 800 }, value: 50 },
+              number: { density: { enable: true, value_area: 500 }, value: 30 },
               opacity: {
                 anim: { enable: false, opacity_min: 0.1, speed: 1, sync: false },
                 random: false,

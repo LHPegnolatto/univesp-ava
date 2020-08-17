@@ -1,30 +1,5 @@
 import styled from 'styled-components';
-import { FaCheck } from 'react-icons/fa'
-
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  flex-direction: column;
-
-  width: 420px;
-  height: 312px;
-
-  border-radius: 3px;
-
-  padding: 30px;
-
-  z-index: 2;
-
-  background-color: #fff;
-
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-  @media(max-width: 500px) {
-    width: 100%;
-  }
-`;
+import { FaCheck } from 'react-icons/fa';
 
 export const Header = styled.div`
   display: flex;  
@@ -65,16 +40,16 @@ export const Content = styled.div`
 
 export const SuccessIcon = styled(FaCheck)`
   color: #26A65B;
-  font-size: 4rem;
+  font-size: 3.5rem;
 `;
 
 export const Description = styled.span`
   color: #354551;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: bold;
   text-align: center;
 
-  padding-top: 20px;
+  padding-top: 5px;
 `;
 
 export const ActionsContainer = styled.div`

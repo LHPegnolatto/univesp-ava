@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Header, Title, Subtitle, Content, SuccessIcon, Description, ActionsContainer, SubmitButton } from './styles';
+import { Header, Title, Subtitle, Content, SuccessIcon, Description, ActionsContainer, SubmitButton } from './styles';
 
 import { useLogonContext, setPage } from '../../context/Logon';
 
@@ -8,7 +8,7 @@ const PasswordRecoverySuccess: React.FC = () => {
   const { setPageAction, setLoadPage } = useLogonContext();
 
   return (
-    <Container>
+    <>
       <Header>
         <Title>Sistema Operacional Univesp</Title>
         <Subtitle>Recuperar a senha / primeiro acesso</Subtitle>
@@ -29,7 +29,7 @@ const PasswordRecoverySuccess: React.FC = () => {
             Confirmar
           </SubmitButton>
         </ActionsContainer>
-    </Container>
+    </>
   );
 }
 

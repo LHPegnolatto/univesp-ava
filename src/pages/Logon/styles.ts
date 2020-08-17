@@ -8,6 +8,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  padding: 30px;
+
+  overflow: hidden;
+
   height: 100%;
 
   background-image: url(${background});
@@ -31,6 +35,8 @@ export const Logo = styled.img`
   margin-left: 180px;
 
   height: 312px;
+
+  z-index: 2;
 
   user-select: none;
 

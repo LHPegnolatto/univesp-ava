@@ -1,31 +1,6 @@
 import styled from 'styled-components';
 import { FaArrowLeft } from 'react-icons/fa'
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  flex-direction: column;
-
-  width: 420px;
-  height: 312px;
-
-  border-radius: 3px;
-
-  padding: 30px;
-
-  z-index: 2;
-
-  background-color: #fff;
-
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-  @media(max-width: 500px) {
-    width: 100%;
-  }
-`;
-
 export const Header = styled.div`
   display: flex;  
   align-items: center;
@@ -115,6 +90,8 @@ export const GoBack = styled(FaArrowLeft)`
 
   cursor: pointer;
   user-select: none;
+
+  margin-right: 20px;
 
   transition: color .2s;
 
