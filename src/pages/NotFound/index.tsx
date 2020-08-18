@@ -1,11 +1,15 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Exclamation, MessageContainer, Message } from './styles';
 
 const NotFound: React.FC = () => {
   return (
     <Container>
-      <h1>Not Found Page</h1>
+      <Exclamation />
+      <MessageContainer>
+        <Message>Not</Message>
+        <Message>Found</Message>
+      </MessageContainer>
     </Container>
   );
 }

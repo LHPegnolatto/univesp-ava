@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-import { Header, Title, Subtitle, Form, InputContainer, InputLabel, Input, Description, ActionsContainer, GoBack, SubmitButton } from './styles';
+import { Description, GoBack } from './styles';
+import { LogonHeader, LogonTitle, LogonSubtitle, LogonForm, LogonInputContainer, LogonInputLabel, LogonInput, LogonActionsContainer, LogonSubmitButton } from '../../styles/GlobalStyles';
 
 import { useLogonContext, setPage } from '../../context/Logon';
 
@@ -20,15 +21,15 @@ const PasswordRecovery: React.FC = () => {
 
   return (
     <>
-      <Header>
-        <Title>Sistema Operacional Univesp</Title>
-        <Subtitle>Recuperar a senha / primeiro acesso</Subtitle>
-      </Header>
+      <LogonHeader>
+        <LogonTitle>Sistema Operacional Univesp</LogonTitle>
+        <LogonSubtitle>Recuperar a senha / primeiro acesso</LogonSubtitle>
+      </LogonHeader>
 
-      <Form>
-        <InputContainer>
-          <InputLabel>Digite o seu e-mail UNIVESP</InputLabel>
-          <Input
+      <LogonForm>
+        <LogonInputContainer>
+          <LogonInputLabel>Digite o seu e-mail UNIVESP</LogonInputLabel>
+          <LogonInput
             ref={emailInputRef}
             type="email"
             placeholder="matricula@exemplo.univesp.br"
@@ -37,19 +38,19 @@ const PasswordRecovery: React.FC = () => {
               setEmail(e.target.value);
             }}
           />
-        </InputContainer>
+        </LogonInputContainer>
 
         <Description>Será enviado para o seu e-mail pessoal um link para que seja feita a redefinição da senha.</Description>
-      </Form>
+      </LogonForm>
 
-      <ActionsContainer>
+      <LogonActionsContainer>
           <GoBack 
             onClick={() => {
               setPage(setLoadPage, setPageAction, 1);
             }}
           />
 
-          <SubmitButton 
+          <LogonSubmitButton 
             onClick={() => {
               setPage(setLoadPage, setPageAction, 4);
 
@@ -59,8 +60,8 @@ const PasswordRecovery: React.FC = () => {
             }}
           >
             Recuperar senha
-          </SubmitButton>
-        </ActionsContainer>
+          </LogonSubmitButton>
+        </LogonActionsContainer>
     </>
   );
 }

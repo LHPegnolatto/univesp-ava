@@ -2,16 +2,16 @@ import React from 'react';
 
 import { Container, Spinner } from './styles';
 
-const LogonLoading: React.FC = () => {
+const FullPageLoader: React.FC = () => {
   return (
     <Container>
       <Spinner
-        size={12}
-        color="var(--primary)"
+        size={20}
+        color={"#d13239"}
         loading={true}
       />
     </Container>
   );
 }
 
-export default LogonLoading;
+export default FullPageLoader;

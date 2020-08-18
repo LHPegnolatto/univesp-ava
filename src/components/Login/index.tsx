@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { Header, Title, Subtitle, Form, InputContainer, InputLabel, Input, ButtonInputContainer, Eye, EyeSlash, ActionsContainer, Recovery, SubmitButton } from './styles';
+import { ButtonInputContainer, Eye, EyeSlash, Recovery } from './styles';
+import { LogonHeader, LogonTitle, LogonSubtitle, LogonForm, LogonInputContainer, LogonInputLabel, LogonInput, LogonActionsContainer, LogonSubmitButton } from '../../styles/GlobalStyles';
 
 import { useAuthContext } from '../../context/Auth';
 import { useLogonContext, setPage } from '../../context/Logon';
 
-const LogonForm: React.FC = () => {
+const Login: React.FC = () => {
   const { setIsAuthenticated } = useAuthContext();
   const { email, setEmail, setPageAction, setLoadPage } = useLogonContext();
 
@@ -37,7 +38,11 @@ const LogonForm: React.FC = () => {
   }
 
   function handleLogin() {
-    setIsAuthenticated(true);
+    setPage(setLoadPage, setPageAction, 4);
+
+    setTimeout(() => {
+      setIsAuthenticated(true);
+    }, 2000);
   }
 
   function handlePasswordRecovery() {
@@ -46,15 +51,15 @@ const LogonForm: React.FC = () => {
 
   return (
     <>
-      <Header>
-        <Title>Sistema Operacional Univesp</Title>
-        <Subtitle>Login</Subtitle>
-      </Header>
+      <LogonHeader>
+        <LogonTitle>Sistema Operacional Univesp</LogonTitle>
+        <LogonSubtitle>Login</LogonSubtitle>
+      </LogonHeader>
 
-      <Form>
-        <InputContainer>
-          <InputLabel>Digite o seu e-mail UNIVESP</InputLabel>
-          <Input
+      <LogonForm>
+        <LogonInputContainer>
+          <LogonInputLabel>Digite o seu e-mail UNIVESP</LogonInputLabel>
+          <LogonInput
             ref={emailInputRef}
             type="email"
             placeholder="matricula@exemplo.univesp.br"
@@ -67,28 +72,32 @@ const LogonForm: React.FC = () => {
               setEmail(e.target.value);
             }}
           />
-        </InputContainer>
+        </LogonInputContainer>
 
-        <InputContainer>
-          <InputLabel>Digite a sua senha</InputLabel>
+        <LogonInputContainer>
+          <LogonInputLabel>Digite a sua senha</LogonInputLabel>
           <ButtonInputContainer>
-            <Input
+            <LogonInput
               ref={passwordInput}
               placeholder={showPassword ? 'exemplo' : '•••••••'}
               type={showPassword ? 'text' : 'password'}
+              onKeyPress={e => { 
+                if (e.charCode === 13)
+                  handleLogin();
+              }}
             />
             {showPassword ? <EyeSlash onClick={toggleShowPassword} /> : <Eye onClick={toggleShowPassword} />}
           </ButtonInputContainer>
-        </InputContainer>
-      </Form>
+        </LogonInputContainer>
+      </LogonForm>
 
-      <ActionsContainer>
+      <LogonActionsContainer>
         <Recovery onClick={handlePasswordRecovery}>Esqueci a senha / Primeiro acesso</Recovery>
 
-        <SubmitButton onClick={handleLogin}>Entrar</SubmitButton>
-      </ActionsContainer>
+        <LogonSubmitButton onClick={handleLogin}>Entrar</LogonSubmitButton>
+      </LogonActionsContainer>
     </>
   );
 }
 
-export default LogonForm;
+export default Login;

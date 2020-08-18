@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Header, Title, Subtitle, Content, SuccessIcon, Description, ActionsContainer, SubmitButton } from './styles';
+import { SuccessIcon, Description, ActionsContainer } from './styles';
+import { LogonHeader, LogonTitle, LogonSubtitle, LogonForm, LogonSubmitButton } from '../../styles/GlobalStyles';
 
 import { useLogonContext, setPage } from '../../context/Logon';
 
@@ -9,26 +10,26 @@ const PasswordRecoverySuccess: React.FC = () => {
 
   return (
     <>
-      <Header>
-        <Title>Sistema Operacional Univesp</Title>
-        <Subtitle>Recuperar a senha / primeiro acesso</Subtitle>
-      </Header>
+      <LogonHeader>
+        <LogonTitle>Sistema Operacional Univesp</LogonTitle>
+        <LogonSubtitle>Recuperar a senha / primeiro acesso</LogonSubtitle>
+      </LogonHeader>
 
-      <Content>
+      <LogonForm>
         <SuccessIcon />
 
         <Description>Foi enviado para o seu e-mail pessoal um link para que seja feita a redefinição da senha.</Description>
-      </Content>
+      </LogonForm>
 
       <ActionsContainer>
-          <SubmitButton 
-            onClick={() => {
-              setPage(setLoadPage, setPageAction, 1)
-            }}
-          >
-            Confirmar
-          </SubmitButton>
-        </ActionsContainer>
+        <LogonSubmitButton 
+          onClick={() => {
+            setPage(setLoadPage, setPageAction, 1)
+          }}
+        >
+          Confirmar
+        </LogonSubmitButton>
+      </ActionsContainer>
     </>
   );
 }

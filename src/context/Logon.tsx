@@ -44,7 +44,7 @@ export function setPage(
 
   setTimeout(() => {
     setPageAction(page);
-    
+
     setLoadPage(true);
   }, 100);
 }

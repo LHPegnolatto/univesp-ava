@@ -6,9 +6,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  height: 100vh;
+
   margin: auto;
 `;
 
 export const Spinner = styled(PulseLoader)`
   display: block;
 `;
+
+
+

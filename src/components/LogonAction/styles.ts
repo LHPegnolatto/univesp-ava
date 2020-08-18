@@ -8,7 +8,8 @@ export const Container = styled.div`
   flex-direction: column;
 
   width: 420px;
-  height: 312px;
+  min-height: 312px;
+  height: auto;
 
   padding: 30px;
 
@@ -19,8 +20,9 @@ export const Container = styled.div`
 
 export const Card = styled.div`
   width: 420px;
-  height: 312px;
-
+  min-height: 312px;
+  height: auto;
+  
   border-radius: 3px;
 
   z-index: 2;
@@ -29,7 +31,7 @@ export const Card = styled.div`
     width: 100%;
   }
 
-  background-color: #fff;
+  background-color: var(--whitePrimary);
 
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 `;

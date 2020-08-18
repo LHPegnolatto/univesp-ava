@@ -16,7 +16,7 @@ const Routes = () => {
       <Switch>
         {isAuthenticated ? AppRoutes : AuthRoutes}
 
-        <Route component={NotFound} />
+        <Route key="notFound" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

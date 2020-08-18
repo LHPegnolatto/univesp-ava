@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const LogoffButton = styled(FaPowerOff)`
-  color: #d13239;
+  color: var(--primary);
   font-size: 5rem;
 
   cursor: pointer;
@@ -19,6 +19,6 @@ export const LogoffButton = styled(FaPowerOff)`
   transition: color .2s;
 
   &:hover {
-    color: #eb4d54;
+    color: var(--primaryHover);
   }
 `;
