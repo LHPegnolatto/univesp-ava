@@ -7,10 +7,6 @@ export const Container = styled.div`
   justify-content: center;
 
   height: 100vh;
-
-  @media(max-width: 520px) {
-    flex-direction: column;
-  }
 `;
 
 export const Exclamation = styled(FaExclamationTriangle)`

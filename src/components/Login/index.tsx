@@ -1,10 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
-import { ButtonInputContainer, Eye, EyeSlash, Recovery } from './styles';
-import { LogonHeader, LogonTitle, LogonSubtitle, LogonForm, LogonInputContainer, LogonInputLabel, LogonInput, LogonActionsContainer, LogonSubmitButton } from '../../styles/GlobalStyles';
+import { ButtonInputContainer, Eye, EyeSlash, Recovery } from "./styles";
+import {
+  LogonHeader,
+  LogonTitle,
+  LogonSubtitle,
+  LogonForm,
+  LogonInputContainer,
+  LogonInputLabel,
+  LogonInput,
+  LogonActionsContainer,
+  LogonSubmitButton,
+} from "../../styles/GlobalStyles";
 
-import { useAuthContext } from '../../context/Auth';
-import { useLogonContext, setPage } from '../../context/Logon';
+import { useAuthContext } from "../../context/Auth";
+import { useLogonContext, setPage } from "../../context/Logon";
 
 const Login: React.FC = () => {
   const { setIsAuthenticated } = useAuthContext();
@@ -16,17 +26,15 @@ const Login: React.FC = () => {
   const passwordInput = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(() => {
-    if(!email)
-      focusEmail();
-    else
-      focusPassword();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ ]);
+    if (!email) focusEmail();
+    else focusPassword();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function toggleShowPassword() {
     setShowPassword(!showPassword);
 
-    setTimeout(() =>  focusPassword(), 10)
+    setTimeout(() => focusPassword(), 10);
   }
 
   function focusEmail() {
@@ -64,11 +72,10 @@ const Login: React.FC = () => {
             type="email"
             placeholder="matricula@exemplo.univesp.br"
             defaultValue={email}
-            onKeyPress={e => { 
-              if (e.charCode === 13)
-                focusPassword();
+            onKeyPress={(e) => {
+              if (e.charCode === 13) focusPassword();
             }}
-            onBlur={e => {
+            onBlur={(e) => {
               setEmail(e.target.value);
             }}
           />
@@ -79,25 +86,30 @@ const Login: React.FC = () => {
           <ButtonInputContainer>
             <LogonInput
               ref={passwordInput}
-              placeholder={showPassword ? 'exemplo' : '•••••••'}
-              type={showPassword ? 'text' : 'password'}
-              onKeyPress={e => { 
-                if (e.charCode === 13)
-                  handleLogin();
+              placeholder={showPassword ? "exemplo" : "•••••••"}
+              type={showPassword ? "text" : "password"}
+              onKeyPress={(e) => {
+                if (e.charCode === 13) handleLogin();
               }}
             />
-            {showPassword ? <EyeSlash onClick={toggleShowPassword} /> : <Eye onClick={toggleShowPassword} />}
+            {showPassword ? (
+              <EyeSlash onClick={toggleShowPassword} />
+            ) : (
+              <Eye onClick={toggleShowPassword} />
+            )}
           </ButtonInputContainer>
         </LogonInputContainer>
       </LogonForm>
 
       <LogonActionsContainer>
-        <Recovery onClick={handlePasswordRecovery}>Esqueci a senha / Primeiro acesso</Recovery>
+        <Recovery onClick={handlePasswordRecovery}>
+          Esqueci a senha / Primeiro acesso
+        </Recovery>
 
         <LogonSubmitButton onClick={handleLogin}>Entrar</LogonSubmitButton>
       </LogonActionsContainer>
     </>
   );
-}
+};
 
 export default Login;

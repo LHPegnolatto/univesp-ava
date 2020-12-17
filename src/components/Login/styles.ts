@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import styled, { css } from "styled-components";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export const ButtonInputContainer = styled.span`
   display: flex;
@@ -12,7 +12,7 @@ export const ButtonInputContainer = styled.span`
 `;
 
 const eyesStyles = css`
-  font-size: 20px;
+  font-size: 20rem;
   color: var(--primary);
 
   cursor: pointer;
@@ -20,7 +20,7 @@ const eyesStyles = css`
   position: absolute;
   right: 10px;
 
-  transition: color .2s;
+  transition: color 0.2s;
 
   &:hover {
     color: var(--primaryHover);
@@ -32,13 +32,13 @@ export const Eye = styled(FaEye)`
 `;
 
 export const EyeSlash = styled(FaEyeSlash)`
-   ${eyesStyles}
+  ${eyesStyles}
 `;
 
 export const Recovery = styled.div`
   color: var(--primary);
 
-  font-size: 0.9rem;
+  font-size: 12rem;
   font-weight: 500;
 
   margin-right: 20px;
@@ -46,7 +46,7 @@ export const Recovery = styled.div`
   cursor: pointer;
   user-select: none;
 
-  transition: color .2s;
+  transition: color 0.2s;
 
   &:hover {
     color: var(--primaryHover);

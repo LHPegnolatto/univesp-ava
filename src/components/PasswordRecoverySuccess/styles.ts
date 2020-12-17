@@ -1,16 +1,16 @@
-import styled from 'styled-components';
-import { FaCheck } from 'react-icons/fa';
+import styled from "styled-components";
+import { FaCheck } from "react-icons/fa";
 
-import { LogonActionsContainer } from '../../styles/GlobalStyles';
+import { LogonActionsContainer } from "../../styles/GlobalStyles";
 
 export const SuccessIcon = styled(FaCheck)`
   color: var(--green);
-  font-size: 3.5rem;
+  font-size: 30rem;
 `;
 
 export const Description = styled.span`
   color: var(--darkgray);
-  font-size: 0.85rem;
+  font-size: 14rem;
   font-weight: bold;
   text-align: center;
 
